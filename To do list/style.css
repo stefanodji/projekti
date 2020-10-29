@@ -1,0 +1,150 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /*padding margin border sve ulazi u velicinu, ona je fiksna*/
+}
+
+body{
+    background-image: linear-gradient(120deg,#e2c35d,#d88771);
+    color:white;
+    font-family: "Poppins", sans-serif;
+    min-height: 100vh;
+}
+
+header{
+    font-size: 17px;
+}
+
+header,
+form{
+    min-height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+form input, form button{
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: none;
+    background-color: white;
+}
+
+form button{
+    color: #ff6f47;
+    background-color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+form button:hover{
+    color: white;
+    background-color: #d88771;
+}
+
+.todo-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.todo-list{
+    min-width: 30%;
+    list-style: none;
+}
+
+.todo{
+    margin: 10px;
+    flex-direction: row;
+    background-color: white;
+    color: black;
+    font-size: 15px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    font-size: 15px;
+    font-weight: 650;
+    transition: all 0.5s ease;
+}
+
+.todo-item{
+    padding: 0px 5px;
+}
+
+.todo li{
+    flex:1;
+}
+
+.complete-btn, .trash-btn{
+    background: #ff6f47;
+    color: white;
+    cursor: pointer;
+    padding: 5px;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.trash-btn:hover{
+    background: white;
+    color: #ff6f47;
+}
+
+.complete-btn:hover{
+    background-color: rgb(28, 156, 28);
+}
+
+.completed1{
+    text-decoration: line-through;
+    opacity: 0.5;
+
+}
+.completed2{
+    background-color: rgb(28, 156, 28);
+}
+
+.fa-trash,
+.fa-check{
+    pointer-events: none; /*Kad kliknemo na iconicu, nista se ne desava. Hocemo da mozemo na celo dugme da kliknemo*/
+}
+
+.fall{
+    transform: translateY(50px) rotateZ(20deg);
+    opacity: 0;
+}
+
+select{ /*tezak za stiliranje*/
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+    border: none;
+}
+
+.select{
+    margin:1rem;
+    position: relative;
+    overflow: hidden; /*ono sa strane da se vuce kad ima puno teksta*/
+}
+
+select{
+    color:#ff6f47;
+    width: 10rem;
+    cursor:pointer;
+    padding: 7px;
+}
+
+.select::after{ /*sudo element after*/
+    content: "\25BC"; /*ova strelica na dole*/
+    position: absolute;
+    background: #ff6f47;
+    top:0;
+    right: 0;
+    padding: 4px;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.select:hover::after{
+    background: white;
+    color: #ff6f47;
+}
